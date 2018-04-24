@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import './heading-style.css';
 
-// className  Heading extends React.Component{
-
-//     render(){
-//         return `<div> <h1> Baila </h1> </div>`;
-//     }
-    
-// }
 
 
 const Heading = () => {
@@ -24,7 +17,7 @@ const Heading = () => {
             </button>
             <div className="collapse navbar-collapse align-item-right" id="navBarMenu">
                 <ul className="navbar-nav mr-auto">
-                <li className="nav-item active">
+                {/* <li className="nav-item active">
                     <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
                 </li>
              
@@ -39,7 +32,7 @@ const Heading = () => {
                 </li>
                 <li className="nav-item">
                     <a className="nav-link" href="#">Settings</a>
-                </li>
+                </li> */}
                 </ul>
               
             </div>
