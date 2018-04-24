@@ -43,3 +43,9 @@ jobs:
       - run: docker login -u $docker_user -p $docker_password 
       # push the image 
       - run: docker push maxkimambo/baila-web:$CIRCLE_BRANCH
+
+      # deploy 
+      - run: 
+          name: Deploy to dev server 
+          command: |
+            ssh $ssh_user@$server cd ~ && docker run -d -p 9001:80 maxkimambo/baila-web:master 
