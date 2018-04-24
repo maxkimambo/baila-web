@@ -29,7 +29,7 @@ class ProfileComponent extends React.Component {
     }
     // this.setState(); 
     render(){
-        return <ProfileCardList data={this.state} match={this.handleMatch} />
+       return <ProfileCardList data={this.state} match={this.handleMatch} />
     }
 }
 

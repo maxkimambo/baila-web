@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Heading from '../Header/Header';
 import Profile from '../Profile/Profile';
 
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import About from '../About/About'; 
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Heading />
-        <Profile/>
-      </div>
-    );
-  }
+const Root = () => {
+  return (
+  <div className="App">
+      <Heading />
+      <Route exact path='/' component={Profile} />
+      <Route path='/about' component={About} /> 
+  </div>
+)
 }
 
-export default App;
+export default Root;
