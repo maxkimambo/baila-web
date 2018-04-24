@@ -3,7 +3,7 @@ import './heading-style.css';
 
 
 
-const Heading = () => {
+const Header = () => {
     return (<header>
         
         <nav className="navbar navbar-dark bg-dark box-shadow">
@@ -41,4 +41,4 @@ const Heading = () => {
       </header>)
 }
 
-export default Heading; 
+export default Header; 
