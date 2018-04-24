@@ -37,5 +37,9 @@ jobs:
       - run: npm run build
       
       # create docker container 
-      - run: docker build -t maxkimambo/baila-web:latest . 
+      - run: docker build -t maxkimambo/baila-web:$CIRCLE_BRANCH . 
        
+      #login to docker hub
+      - run: docker login -u $docker_user -p $docker_password 
+      # push the image 
+      - run: docker push maxkimambo/baila-web:$CIRCLE_BRANCH
