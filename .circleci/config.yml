@@ -31,6 +31,10 @@ jobs:
         
       # run tests!
       - run: npm test
-
-      - run: npm run build 
+      
+      # build the project
+      - run: npm run build
+      
+      # create docker container 
+      - run: docker build -t maxkimambo/baila-web:latest . 
        
