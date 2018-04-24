@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './heading-style.css';
 
 
@@ -8,7 +8,7 @@ const Heading = () => {
         
         <nav className="navbar navbar-dark bg-dark box-shadow">
           <div className="container d-flex justify-content-between">
-            <a href="#" className="navbar-brand d-flex">
+            <a href="/" className="navbar-brand d-flex">
                <strong>Baila</strong>
             </a>
             <button className="navbar-toggler" type="button" data-toggle="collapse"
