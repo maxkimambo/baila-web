@@ -2,20 +2,27 @@ import React from 'react';
 import ProfileCardList from './../ProfileCardList/ProfileCardList'; 
 
 class ProfileComponent extends React.Component {
-    state = [{
-        name: 'Gloria',
-        age: 32, 
-        city: 'Berlin', 
-        bio: 'I love dancing Salsa, bachata and kizomba... Come on write me up'
-    }, 
-    {
-        name: 'Gloria',
-        age: 32, 
-        city: 'Berlin', 
-        bio: 'I love dancing Salsa, bachata and kizomba... Come on write me up'
-    }
-    
-    ]
+  
+    constructor(){
+        super()
+        this.state= {}
+        this.state.users = [{
+            name: 'Gloria',
+            age: 32, 
+            city: 'Berlin', 
+            bio: 'I love dancing Salsa, bachata and kizomba... Come on write me up'
+        }, 
+        {
+            name: 'Gloria',
+            age: 32, 
+            city: 'Berlin', 
+            bio: 'I love dancing Salsa, bachata and kizomba... Come on write me up'
+        }
+        
+        ]
+
+    }   
+
     fetchProfiles = ()=> {
         // get the data off the server 
         const data = {}; 
@@ -29,7 +36,7 @@ class ProfileComponent extends React.Component {
     }
     // this.setState(); 
     render(){
-       return <ProfileCardList data={this.state} match={this.handleMatch} />
+       return <ProfileCardList data={this.state.users} match={this.handleMatch} />
     }
 }
 
