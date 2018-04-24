@@ -48,4 +48,4 @@ jobs:
       - run: 
           name: Deploy to dev server 
           command: |
-            ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $ssh_user@$server cd ~ && docker run -d -p 9001:80 maxkimambo/baila-web:master 
+            ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $ssh_user@$server cd /home/max && docker run -d -p 9001:80 maxkimambo/baila-web:master 
