@@ -1,9 +1,9 @@
 import React from 'react';
 import './heading-style.css';
+import {Link} from 'react-router-dom'; 
 
 
-
-const Header = () => {
+const Header = ({match}) => {
     return (<header>
         
         <nav className="navbar navbar-dark bg-dark box-shadow">
@@ -17,24 +17,23 @@ const Header = () => {
             </button>
             <div className="collapse navbar-collapse align-item-right" id="navBarMenu">
                 <ul className="navbar-nav mr-auto">
-                {/* <li className="nav-item active">
-                    <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                <li className="nav-item active">
+                    <Link className="nav-link" to="/"> Home </Link>
                 </li>
-             
+                
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Matches</a>
-                </li>
+                    <Link className="nav-link" to="/matches"> Matches </Link>
+               </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Messages</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link" href="#">Profile</a>
+                    <Link className="nav-link" to="/messages"> Messages </Link>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#">Settings</a>
-                </li> */}
-                </ul>
-              
+                    <Link className="nav-link" to="/own-profile"> Profile </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/settings"> Settings </Link>
+                </li>
+                </ul> 
             </div>
           </div>
         </nav>
