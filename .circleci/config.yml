@@ -45,7 +45,7 @@ jobs:
       - run: docker push maxkimambo/baila-web:$CIRCLE_BRANCH
 
       # deploy 
-      - run: 
-          name: Deploy to dev server 
-          command: |
-            ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $ssh_user@$server cd /home/max && docker run -d -p 9001:80 maxkimambo/baila-web:master 
+      # - run: 
+      #     name: Deploy to dev server 
+      #     command: |
+      #       ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $ssh_user@$server cd /home/max && docker run -d -p 9001:80 maxkimambo/baila-web:master 
