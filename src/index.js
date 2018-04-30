@@ -12,7 +12,7 @@ store.dispatch(Actions.LoadMatches());
 
 ReactDOM.render(
     <Provider store={store}> 
-        <Root/>
+        <Root />
      </Provider> 
     , 
      document.getElementById('root'));

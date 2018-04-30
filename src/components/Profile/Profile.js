@@ -10,10 +10,8 @@ class ProfileComponent extends React.Component {
         this.state.users = []
         this.state.users = props.matches.users;  
         
-        console.log(props)        
+         
     }   
-    
-    
 
     handleMatch(e){
         e.preventDefault(); 
