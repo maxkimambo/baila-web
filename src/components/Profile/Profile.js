@@ -1,16 +1,14 @@
 import React from 'react'; 
 import ProfileCardList from './../ProfileCardList/ProfileCardList'; 
 import { connect } from 'react-redux';
-import * as actions from '../../Actions'
+// import * as actions from '../../Actions'
 class ProfileComponent extends React.Component {
   
     constructor(props, context){
         super()
         this.state= {}
         this.state.users = []
-        this.state.users = props.matches.users;  
-        
-         
+        this.state.users = props.matches.users;   
     }   
 
     handleMatch(e){
