@@ -11,6 +11,7 @@ export const ShowAll = (users) => {
 }
 
 export const Match = (user) => {
+  
     return {
         type: actionType.MATCH,
         user 

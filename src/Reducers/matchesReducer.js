@@ -7,6 +7,11 @@ const matchesReducer = (state = initialState, action) => {
          
             return Object.assign({},  action.users); 
         }
+        case actionType.MATCH: {
+            console.log(` match reducer hit`);
+            console.log(action.user); 
+            return Object.assign([],  initialState); 
+        }
        
         default:
             return state;

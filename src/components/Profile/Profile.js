@@ -1,14 +1,16 @@
 import React from 'react'; 
 import ProfileCardList from './../ProfileCardList/ProfileCardList'; 
 import { connect } from 'react-redux';
-// import * as actions from '../../Actions'
+import * as actions from '../../Actions'
 class ProfileComponent extends React.Component {
   
     constructor(props, context){
         super()
         this.state= {}
         this.state.users = []
-        this.state.users = props.matches.users;   
+        this.state.users = props.matches.users;
+        this.props = props;  
+        console.log(props);  
     }   
 
     handleMatch(e){
@@ -17,10 +19,11 @@ class ProfileComponent extends React.Component {
     }
     
     match(user){
-        console.log(`matched user:  ${user}`); 
+        alert(`matched user:  ${user.id}`); 
     }
     render(){
-       return <ProfileCardList data={this.state.users} match={this.props.handleMatch} />
+       
+       return <ProfileCardList store={this.props} />
     }
 }
 
@@ -30,6 +33,12 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        matchDispatch: (user) => dispatch(actions.Match(user))
+    }
+}
 
 
-export default connect(mapStateToProps)(ProfileComponent); 
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileComponent); 

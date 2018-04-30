@@ -2,8 +2,10 @@ import React  from 'react';
 import './ProfileCard.css'; 
 
 const ProfileCard = (props) => {
-   const url = 'https://randomuser.me/api/portraits/women/11.jpg'; 
-  
+
+   const handleClick = props.match.bind(this, props.user);
+
+   const url = 'https://randomuser.me/api/portraits/women/11.jpg';
     return (
         <div className="col-md-4">
               <div className="card mb-4 box-shadow">
@@ -13,7 +15,7 @@ const ProfileCard = (props) => {
                   <p className="card-text bio">{props.user.bio}</p>
                   <div className="align-item-right">
                     <div className="btn-group">
-                      <button onClick={props.match} type="button" className="btn btn-sm btn-outline-primary">Yes</button>
+                      <button onClick={handleClick} type="button" className="btn btn-sm btn-outline-primary">Yes</button>
                       <button type="button" className="btn btn-sm btn-outline-secondary">No</button>
                     </div>
                   </div>
