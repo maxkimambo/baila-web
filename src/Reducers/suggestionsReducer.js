@@ -18,8 +18,8 @@ const suggestionsReducer = (state, action) => {
             
             state.users = state.users.filter((user) => {
                 return user.id !== action.user.id
-            })
-            console.log(state); 
+            });
+            
             return Object.assign({}, state); 
         }
        

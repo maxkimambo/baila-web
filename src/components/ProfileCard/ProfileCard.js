@@ -14,12 +14,19 @@ const ProfileCard = (props) => {
                   <img src={url} alt="" className="rounded-circle"/>
                   <p className="card-text"> {props.user.name} ({props.user.age}), {props.user.city} </p>
                   <p className="card-text bio">{props.user.bio}</p>
-                  <div className="align-item-right">
+                  
                     <div className="btn-group">
-                      <button onClick={handleClick} type="button" className="btn btn-sm btn-outline-primary">Yes</button>
-                      <button onClick={handleRejection} type="button" className="btn btn-sm btn-outline-secondary">No</button>
+                    <div className="no-button">
+                      <button onClick={handleRejection} type="button" className="btn btn-md btn-outline-secondary">No</button>
                     </div>
-                  </div>
+                   
+                    
+                    <div className="like-button">
+                      <button onClick={handleClick} type="button" className="btn btn-md btn-outline-primary">Like</button>
+                    </div>
+                    
+                    </div>
+                  
                 </div>           
             </div>
         </div> 
