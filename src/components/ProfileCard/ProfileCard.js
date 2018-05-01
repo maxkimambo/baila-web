@@ -5,7 +5,7 @@ const ProfileCard = (props) => {
 
    const handleClick = props.match.bind(this, props.user);
 
-   const url = 'https://randomuser.me/api/portraits/women/11.jpg';
+   const url = props.user.mainPhoto;
     return (
         <div className="col-md-4">
               <div className="card mb-4 box-shadow">

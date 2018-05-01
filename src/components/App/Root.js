@@ -16,7 +16,8 @@ const Root = () => {
       <Route exact path='/' component={Profile} />
       <Route path='/about' component={About} /> 
       <Route path='/matches' component={Matches} /> 
-      <Route path='/settings' component={Settings} /> 
+      <Route path='/settings' component={Settings} />
+       
   </div>
 )
 }
