@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'; 
-import matches from './matchesReducer'; 
+import suggestions from './suggestionsReducer'; 
 
 const rootReducer = combineReducers({
-        matches
+        suggestions
 }); 
 
 export default rootReducer; 
