@@ -1,26 +1,33 @@
-
-import initialState from '../Reducers/initialState'; 
-import * as actionType from './actionTypes'; 
+import initialState from '../Reducers/initialState';
+import * as actionType from './actionTypes';
 
 // action creators 
 export const ShowAll = (users) => {
     return {
-        type: actionType.SHOW_ALL, 
+        type: actionType.SHOW_ALL,
         users
     }
 }
 
 export const Match = (user) => {
-  
+
     return {
         type: actionType.MATCH,
-        user 
+        user
     }
 }
+
 export const Reject = (user) => {
     return {
-        type: actionType.REJECT, 
-        user 
+        type: actionType.REJECT,
+        user
+    }
+}
+
+export const ShowProfile = (user) => {
+    return {
+        type: actionType.SHOW_PROFILE,
+        user
     }
 }
 
@@ -45,6 +52,6 @@ export const setFilter = (filter) => {
 
 export const LoadMatches = () => {
     // do api call
-    return ShowAll(initialState); 
-    
+    return ShowAll(initialState);
+
 }

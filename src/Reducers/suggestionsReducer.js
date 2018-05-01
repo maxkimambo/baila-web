@@ -31,6 +31,7 @@ const suggestionsReducer = (state, action) => {
                         if(r.id === user.id){
                             shouldRemove = false; 
                         }
+                        return r;
                     })
                     return shouldRemove;
                 }); 
