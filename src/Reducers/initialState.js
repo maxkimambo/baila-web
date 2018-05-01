@@ -24,7 +24,7 @@ export default {
             lat: 53.801277,
             lon: -1.548567
         },
-        mainPhoto: "https://randomuser.me/api/portraits/women/12.jpg", 
+        mainPhoto: "https://randomuser.me/api/portraits/women/55.jpg", 
         additionalPhotos: []
     } 
     ], 

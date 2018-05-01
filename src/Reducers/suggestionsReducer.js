@@ -10,7 +10,9 @@ const suggestionsReducer = (state, action) => {
         case actionType.MATCH: {
             console.log(` suggestions reducer hit`);
             console.log(action.user); 
-            return Object.assign({}, {...state},  initialState); 
+            state.currentUser.matches.push(action.user); 
+           
+            return Object.assign({}, state); 
         }
        
         default:
