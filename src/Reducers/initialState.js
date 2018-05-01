@@ -11,7 +11,22 @@ export default {
             lon: -1.548567
         },
         mainPhoto: "https://randomuser.me/api/portraits/women/11.jpg", 
-        additionalPhotos: []
+        additionalPhotos: [], 
+        dances: [
+            {danceType: 'Salsa', 
+             danceLevel: 'Advanced', 
+             danceProgress: "90%"
+            },
+            {
+             danceType: 'Bachata', 
+             danceLevel: 'Advanced', 
+             danceProgress: "80%"
+            }, 
+            {danceType: 'Kizomba', 
+             danceLevel: 'Beginner', 
+             danceProgress: "25%"
+            }
+        ]
     }, 
     {
         id: 2,
