@@ -34,6 +34,7 @@ export default {
         age: 33, 
         city: 'Berlin', 
         bio: 'This is my short bio', 
-        matches: []
+        matches: [], 
+        rejections: [{id: 1}]
     }
 }

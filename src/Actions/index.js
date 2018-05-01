@@ -17,6 +17,12 @@ export const Match = (user) => {
         user 
     }
 }
+export const Reject = (user) => {
+    return {
+        type: actionType.REJECT, 
+        user 
+    }
+}
 
 export const ShowMatches = () => {
     return {

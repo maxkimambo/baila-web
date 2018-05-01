@@ -5,7 +5,7 @@ const ProfileCardList = (props) => {
 
     return(
      props.store.suggestions.users.map((profile, inx) => {
-        return <ProfileCard user={profile}  key={profile.id} match={props.store.matchDispatch}/>
+        return <ProfileCard user={profile}  key={profile.id} match={props.store.matchDispatch} reject={props.store.reject}/>
      })
     ); 
 }

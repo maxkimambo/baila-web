@@ -23,7 +23,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        matchDispatch: (user) => dispatch(actions.Match(user))
+        matchDispatch: (user) => dispatch(actions.Match(user)), 
+        reject: (user) => dispatch(actions.Reject(user))
     }
 }
 

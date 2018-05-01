@@ -4,6 +4,7 @@ import './ProfileCard.css';
 const ProfileCard = (props) => {
 
    const handleClick = props.match.bind(this, props.user);
+   const handleRejection = props.reject.bind(this, props.user); 
 
    const url = props.user.mainPhoto;
     return (
@@ -16,7 +17,7 @@ const ProfileCard = (props) => {
                   <div className="align-item-right">
                     <div className="btn-group">
                       <button onClick={handleClick} type="button" className="btn btn-sm btn-outline-primary">Yes</button>
-                      <button type="button" className="btn btn-sm btn-outline-secondary">No</button>
+                      <button onClick={handleRejection} type="button" className="btn btn-sm btn-outline-secondary">No</button>
                     </div>
                   </div>
                 </div>           
