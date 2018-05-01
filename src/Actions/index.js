@@ -24,6 +24,13 @@ export const Reject = (user) => {
     }
 }
 
+export const LoadProfile = (id) => {
+    return {
+        type: actionType.LOAD_PROFILE, 
+        id
+    }
+}
+
 export const ShowProfile = (user) => {
     return {
         type: actionType.SHOW_PROFILE,

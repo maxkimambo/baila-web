@@ -1,19 +1,30 @@
 import * as actionTypes from './../Actions/actionTypes'
-import initialState from './initialState'; 
+import initialState from './initialState';
 
-const ProfileReducer = (state = {},action) => {
+const ProfileReducer = (state = {}, action) => {
 
-    switch(action.type){
-        case actionTypes.SHOW_PROFILE: {
-            state.currentProfile = initialState.users[0]; 
+    switch (action.type) {
+        case actionTypes.SHOW_PROFILE:{
+                
 
-            return Object.assign({}, state); 
-        }
-        default: 
+                return {...state, currentProfile:initialState.users[3]};
+            }
+        case actionTypes.LOAD_PROFILE:
+            {
+
+
+                const currentProfile = initialState.users.find((user) => {
+                    return user.id == action.id;
+                });
+
+                console.log(currentProfile);
+                return { ...state, currentProfile };
+            }
+        default:
             // show default profile info 
-            state.currentProfile = initialState.users[0]; 
-            return Object.assign({}, state); 
+            // state.currentProfile = initialState.users[2];
+            return {...state, currentProfile:initialState.users[3]}
     }
 
 }
-export default ProfileReducer; 
+export default ProfileReducer;
