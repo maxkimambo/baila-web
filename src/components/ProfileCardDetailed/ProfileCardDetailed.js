@@ -18,12 +18,15 @@ class ProfileCardDetailed extends React.Component {
     }
 
     componentWillReceiveProps(nextProps){
-       
-        this.setState({
-            profile: nextProps.profile.currentProfile,
-            mainPhoto: nextProps.profile.currentProfile.mainPhoto,
-            fetchProfileData: nextProps.fetchProfileData
-        }); 
+        // prevent app from updating state 
+        // if no profile has been found.
+        if (nextProps.profile.currentProfile){
+            this.setState({
+                profile: nextProps.profile.currentProfile,
+                mainPhoto: nextProps.profile.currentProfile.mainPhoto,
+                fetchProfileData: nextProps.fetchProfileData
+            }); 
+        }
     }
   
     render() {
