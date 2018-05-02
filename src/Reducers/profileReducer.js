@@ -16,8 +16,7 @@ const ProfileReducer = (state = {}, action) => {
                 const currentProfile = initialState.users.find((user) => {
                     return user.id === action.id;
                 });
-
-                console.log(currentProfile);
+              
                 return { ...state, currentProfile };
             }
         default:

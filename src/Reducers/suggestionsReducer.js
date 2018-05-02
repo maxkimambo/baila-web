@@ -8,19 +8,21 @@ const suggestionsReducer = (state, action) => {
             return Object.assign({}, {...state},  action.users); 
         }
         case actionType.MATCH: {
-        
-            state.currentUser.matches.push(action.user); 
-           
-            return Object.assign({}, state); 
+            let currentUser = Object.assign({}, state.currentUser);
+            currentUser.matches.push(action.user);  
+
+            return {...state, currentUser}; 
         }
         case actionType.REJECT: {
-            state.currentUser.rejections.push(action.user); 
-            
-            state.users = state.users.filter((user) => {
+            let currentUser = Object.assign({}, state.currentUser); 
+            currentUser.rejections.push(action.user); 
+            let users = Object.assign([], state.users); 
+
+            users = users.filter((user) => {
                 return user.id !== action.user.id
             });
             
-            return Object.assign({}, state); 
+            return {...state, users, currentUser}; 
         }
        
         default:
