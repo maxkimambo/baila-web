@@ -12,7 +12,8 @@ class ProfileCardDetailed extends React.Component {
             mainPhoto: props.profile.currentProfile.mainPhoto,
             fetchProfileData: props.fetchProfileData
         }
-        this.userId = props.match.params.id;
+        //TODO: remove parsing if we change ID's to Guids
+        this.userId = parseInt(props.match.params.id, 10); 
         this.state.fetchProfileData(this.userId) 
     
     }
