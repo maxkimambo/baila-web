@@ -24,6 +24,10 @@ const settingsReducer = (state ={}, action) => {
             const ageValues = generateValues(18,99); 
             return {...state, heightValues, ageValues, genderValues}
         }
+        case actionType.UPDATE_SETTINGS: {
+            
+            return {...state, ...action.settings}
+        }
         default: 
             const heightValues = generateValues(130,240,5); 
             const ageValues = generateValues(18,99); 

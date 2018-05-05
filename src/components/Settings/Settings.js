@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import NumericRange from './NumericRange'; 
 import RadioSelect from './RadioSelect'; 
-
+import * as actions from './../../Actions'
 
 class SettingsComponent extends React.Component{
     constructor(props){
@@ -13,16 +13,22 @@ class SettingsComponent extends React.Component{
             heightValues: props.settings.heightValues,
             selectedGender: props.settings.selectedGender, 
             genderHandler: this.genderHandler.bind(this),
+            rangeHandler: this.rangeHandler.bind(this),
+            update: props.update
         }
-   
     }
 
-    genderHandler(val){
-        this.setState({...this.state, selectedGender: val.target.value})
+    componentWillReceiveProps(newProps){
+        this.setState(newProps);
+    }
+    genderHandler(e){
+        this.setState({...this.state, selectedGender: e.target.value});
+        this.state.update(this.state);
     }
 
-    rangeHandler(val){
-
+    rangeHandler(e){
+        this.setState({...this.state, [e.target.name]: e.target.value});
+        this.state.update(this.state);
     }
 
     render(){
@@ -35,8 +41,19 @@ class SettingsComponent extends React.Component{
               <div className="card-body">
                   <h5 className="card-title">Your matching criteria</h5>
                   <form>
-                     <NumericRange label="Age" startValues={this.state.ageValues} endValues={this.state.ageValues}/>
-                     <NumericRange label="Height" startValues={this.state.heightValues} endValues={this.state.heightValues}/> 
+                     <NumericRange 
+                            label="Age" 
+                            startValues={this.state.ageValues} 
+                            endValues={this.state.ageValues}
+                            start={this.state.ageStart}
+                            end={this.state.ageEnd} 
+                            handleChange={this.state.rangeHandler}/>
+
+                     <NumericRange 
+                            label="Height" 
+                            startValues={this.state.heightValues} 
+                            endValues={this.state.heightValues}
+                            handleChange={this.state.rangeHandler}/> 
                      <RadioSelect label="Gender" selectItems={this.state.genderValues}  selectedValue={this.state.selectedGender} selectHandler= {this.state.genderHandler}/>
                   </form>
                   <p className="card-text alert alert-warning" role="alert">Dance style & level will be matched automatically</p>
@@ -48,22 +65,16 @@ class SettingsComponent extends React.Component{
     }
 }
 
-// export default SettingsComponent; 
-
-
 const mapStateToProps = (state, ownProps) => {
     return {
         settings: state.settings 
     }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         matchDispatch: (user) => dispatch(actions.Match(user)), 
-//         reject: (user) => dispatch(actions.Reject(user))
-//     }
-// }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        update: (settings) => dispatch(actions.UpdateSettings(settings))
+    }
+}
 
-
-
-export default connect(mapStateToProps)(SettingsComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsComponent)

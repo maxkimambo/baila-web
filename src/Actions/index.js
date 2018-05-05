@@ -31,6 +31,13 @@ export const LoadProfile = (id) => {
     }
 }
 
+export const UpdateSettings = (settings) => {
+    return {
+        type: actionType.UPDATE_SETTINGS, 
+        settings
+    }
+}
+
 export const ShowProfile = (user) => {
     return {
         type: actionType.SHOW_PROFILE,
