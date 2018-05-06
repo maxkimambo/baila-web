@@ -2,14 +2,14 @@ import React from 'react';
 
 
 const RadioSelect = ({label, selectItems = [], selectedValue, selectHandler}) => {
-    // const handleSelect = selectHandler.bind(this, selectedValue); 
+
     return (
         <div className="radio-select">
             <fieldset className="form-group">
            
             <div className="row">
             <div className="form-group row">
-                <legend className="col-form-label col-sm-2 pt-0">{label}</legend>
+                <legend className="col-form-label col-md-4">{label}</legend>
 
                {selectItems.map((item, indx)=> {
                     return   <div key={item.name+indx} className="col-md-3">

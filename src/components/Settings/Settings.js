@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import NumericRange from './NumericRange'; 
 import RadioSelect from './RadioSelect'; 
 import * as actions from './../../Actions'
-
+import './settings.css'
 class SettingsComponent extends React.Component{
     constructor(props){
         super(props)
@@ -21,6 +21,7 @@ class SettingsComponent extends React.Component{
     componentWillReceiveProps(newProps){
         this.setState(newProps);
     }
+
     genderHandler(e){
         this.setState({...this.state, selectedGender: e.target.value});
         this.state.update(this.state);
@@ -39,22 +40,39 @@ class SettingsComponent extends React.Component{
               Preferences
           </div>
               <div className="card-body">
-                  <h5 className="card-title">Your matching criteria</h5>
+                 
                   <form>
-                     <NumericRange 
-                            label="Age" 
-                            startValues={this.state.ageValues} 
-                            endValues={this.state.ageValues}
-                            start={this.state.ageStart}
-                            end={this.state.ageEnd} 
-                            handleChange={this.state.rangeHandler}/>
-
-                     <NumericRange 
-                            label="Height" 
-                            startValues={this.state.heightValues} 
-                            endValues={this.state.heightValues}
-                            handleChange={this.state.rangeHandler}/> 
-                     <RadioSelect label="Gender" selectItems={this.state.genderValues}  selectedValue={this.state.selectedGender} selectHandler= {this.state.genderHandler}/>
+                      <div className="col-md-12">
+                      <div className="spacer">
+                        <NumericRange 
+                                label="Age" 
+                                startValues={this.state.ageValues} 
+                                endValues={this.state.ageValues}
+                                start={this.state.ageStart}
+                                end={this.state.ageEnd} 
+                                handleChange={this.state.rangeHandler}/>
+                      </div>
+                      
+                      <div className="spacer">
+                        <NumericRange 
+                                label="Height" 
+                                startValues={this.state.heightValues} 
+                                endValues={this.state.heightValues}
+                                start={this.state.heightStart}
+                                end={this.state.heightEnd}
+                                handleChange={this.state.rangeHandler}/> 
+                      </div>
+                      
+                      <div className="spacer">
+                        <RadioSelect 
+                                label="Gender" 
+                                selectItems={this.state.genderValues}
+                                selectedValue={this.state.selectedGender} 
+                                selectHandler= {this.state.genderHandler}/>                       
+                      </div>
+                      </div>
+                     
+                     
                   </form>
                   <p className="card-text alert alert-warning" role="alert">Dance style & level will be matched automatically</p>
                   <button className="btn btn-primary">Update</button> 
