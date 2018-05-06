@@ -30,7 +30,12 @@ export const LoadProfile = (id) => {
         id
     }
 }
-
+export const LoadSettings = ()=> {
+    return {
+        type: actionType.LOAD_SETTINGS,
+        
+    }
+}
 export const UpdateSettings = (settings) => {
     return {
         type: actionType.UPDATE_SETTINGS, 

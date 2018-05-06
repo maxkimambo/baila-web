@@ -16,33 +16,34 @@ class SettingsComponent extends React.Component{
             selectedGender: props.settings.selectedGender, 
             genderHandler: this.genderHandler.bind(this),
             rangeHandler: this.rangeHandler.bind(this),
-            update: props.update,
+            update: props.update.bind(this),
             alert: props.settings.alert, 
-            alertMessage: props.settings.alertMessage 
+            alertMessage: props.settings.alertMessage,
+            ageStart: props.settings.ageStart,
+            ageEnd: props.settings.ageEnd 
             
         }
+        
         this.save = this.save.bind(this);
+        props.load(); 
     }
 
     componentWillReceiveProps(newProps){
-        this.setState(newProps);
+         this.setState(newProps.settings);
     }
 
     genderHandler(e){
         this.setState({...this.state, selectedGender: e.target.value});
-        this.state.update(this.state);
+     
     }
 
     rangeHandler(e){
         this.setState({...this.state, [e.target.name]: e.target.value});
-        this.state.update(this.state);
+     
     }
 
     save(e){
-      
         this.state.update(this.state); 
-        this.setState({...this.state, alert:'info', alertMessage: 'Preferences saved'}); 
-        
         //TODO find a more elegant way of handling this. 
         setTimeout(() => {
             this.setState({...this.state, alertMessage:''}); 
@@ -112,6 +113,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        load: () => dispatch(actions.LoadSettings()),
         update: (settings) => dispatch(actions.UpdateSettings(settings))
     }
 }
