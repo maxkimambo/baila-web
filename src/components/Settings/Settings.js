@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import NumericRange from './NumericRange'; 
 import RadioSelect from './RadioSelect'; 
 import * as actions from './../../Actions'
+import Alert from './../Alert'; 
+
 import './settings.css'
 class SettingsComponent extends React.Component{
     constructor(props){
@@ -14,8 +16,12 @@ class SettingsComponent extends React.Component{
             selectedGender: props.settings.selectedGender, 
             genderHandler: this.genderHandler.bind(this),
             rangeHandler: this.rangeHandler.bind(this),
-            update: props.update
+            update: props.update,
+            alert: props.settings.alert, 
+            alertMessage: props.settings.alertMessage 
+            
         }
+        this.save = this.save.bind(this);
     }
 
     componentWillReceiveProps(newProps){
@@ -32,6 +38,16 @@ class SettingsComponent extends React.Component{
         this.state.update(this.state);
     }
 
+    save(e){
+      
+        this.state.update(this.state); 
+        this.setState({...this.state, alert:'info', alertMessage: 'Preferences saved'}); 
+        
+        //TODO find a more elegant way of handling this. 
+        setTimeout(() => {
+            this.setState({...this.state, alertMessage:''}); 
+        },1500);
+    }
     render(){
         return   <div className="row">
         <div className="col-md-6">
@@ -64,6 +80,7 @@ class SettingsComponent extends React.Component{
                       </div>
                       
                       <div className="spacer">
+                      
                         <RadioSelect 
                                 label="Gender" 
                                 selectItems={this.state.genderValues}
@@ -71,11 +88,15 @@ class SettingsComponent extends React.Component{
                                 selectHandler= {this.state.genderHandler}/>                       
                       </div>
                       </div>
-                     
-                     
+   
                   </form>
-                  <p className="card-text alert alert-warning" role="alert">Dance style & level will be matched automatically</p>
-                  <button className="btn btn-primary">Update</button> 
+                 
+                 <Alert 
+                    alertType={this.state.alert}
+                    message={this.state.alertMessage}
+                 /> 
+
+                  <button className="btn btn-primary" onClick={this.save}>Update</button> 
               </div>
           </div>
         </div>
