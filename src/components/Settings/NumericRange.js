@@ -14,7 +14,10 @@ const NumericRange = ({
     return (
         <div className="range-selector">
             <div className="form-row">
-                <label htmlFor="start" className="col-md-2 col-form-label">{label}</label>
+                <div className="col-md-2">
+                    <label htmlFor="start" className="col-form-label">{label}</label>
+                </div>
+               
                 <div className="col-md-3">
                     <select id={label.toLowerCase() + "Start"} name={label.toLowerCase() + "Start"} value={start} onChange={handleChange} className="form-control"> 
                             {startValues.map(v => {           
@@ -22,7 +25,7 @@ const NumericRange = ({
                             })}
                     </select> 
                 </div>
-                <div className="col-md-2">
+                <div className="col-md-1">
                     - 
                 </div>
                 <div className="col-md-3">

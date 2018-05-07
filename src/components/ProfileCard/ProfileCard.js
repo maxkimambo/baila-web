@@ -8,8 +8,8 @@ const ProfileCard = (props) => {
 
    const url = props.user.mainPhoto;
     return (
-        <div className="col-md-4">
-              <div className="card mb-4 box-shadow">
+        <div className="col-md-12">
+              <div className="card mb-12 box-shadow">
                 <div className="card-body">
                   <img src={url} alt="" className="rounded-circle"/>
                   <p className="card-text"> {props.user.name} ({props.user.age}), {props.user.city} </p>
