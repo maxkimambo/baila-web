@@ -49,9 +49,9 @@ const settingsReducer = (state ={}, action) => {
             
             settings.alert = 'info'; 
             settings.alertMessage = 'Preferences updated'; 
-            settings.ageEnd = getMax(settings.ageStart, settings.ageEnd)
-            settings.heightEnd = getMax(settings.heightStart, settings.heightEnd); 
-          
+            settings.ageEnd = getMax(settings.ageStart ? settings.ageStart:state.ageStart, settings.ageEnd?settings.ageEnd:state.ageEnd)
+            settings.heightEnd = getMax(settings.heightStart? settings.heightStart:state.heightStart, settings.heightEnd?settings.heightEnd:state.heightEnd); 
+            
             return Object.assign({}, state, settings);
         }
         default: 
