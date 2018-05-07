@@ -24,7 +24,7 @@ class SettingsComponent extends React.Component {
       ageStart: props.settings.ageStart,
       ageEnd: props.settings.ageEnd
     };
-    this.dances=['Salsa', 'Bachata', 'Merengue', 'Kizomba'];
+    this.dances = ["Salsa", "Bachata", "Merengue", "Kizomba"];
     this.save = this.save.bind(this);
     props.load();
   }
@@ -41,10 +41,10 @@ class SettingsComponent extends React.Component {
     this.setState({ ...this.state, [e.target.name]: e.target.value });
   }
 
-  proficiencyHandler(e){
-      // console.log(e.target.name)
-      // console.log(e.target.value)
-      this.setState({...this.state, [e.target.name]: e.target.value}); 
+  proficiencyHandler(e) {
+    // console.log(e.target.name)
+    // console.log(e.target.value)
+    this.setState({ ...this.state, [e.target.name]: e.target.value });
   }
 
   save(e) {
@@ -57,7 +57,7 @@ class SettingsComponent extends React.Component {
   render() {
     return (
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-12">
           <div className="card">
             <div className="card-header">Preferences</div>
             <div className="card-body">
@@ -73,7 +73,8 @@ class SettingsComponent extends React.Component {
                       handleChange={this.state.rangeHandler}
                     />
                   </div>
-
+                </div>
+                <div className="col-md-12">
                   <div className="spacer">
                     <NumericRange
                       label="Height"
@@ -84,7 +85,9 @@ class SettingsComponent extends React.Component {
                       handleChange={this.state.rangeHandler}
                     />
                   </div>
+                </div>
 
+                <div className="col-md-12">
                   <div className="spacer">
                     <RadioSelect
                       label="Gender"
@@ -93,25 +96,31 @@ class SettingsComponent extends React.Component {
                       selectHandler={this.state.genderHandler}
                     />
                   </div>
+
+                  {this.dances.map((dance, indx) => {
+                    return (
+                      <Proficiency
+                        className="col-md-12"
+                        label={dance}
+                        key={dance + indx}
+                        levels={[
+                          "None",
+                          "Beginner",
+                          "Intermediate",
+                          "Advanced",
+                          "Professional"
+                        ]}
+                        handleChange={this.state.proficiencyHandler}
+                      />
+                    );
+                  })}
+
+                  <Alert
+                    alertType={this.state.alert}
+                    message={this.state.alertMessage}
+                  />
                 </div>
               </form>
-              
-              { this.dances.map((dance, indx)=> {
-
-                  return  <Proficiency label={dance}
-                            key={dance+indx} 
-                            levels={['None','Beginner', 'Intermediate', 'Advanced', 'Professional']}
-                            handleChange={this.state.proficiencyHandler}
-                  />
-
-              }) }
-             
-
-             <Alert
-                alertType={this.state.alert}
-                message={this.state.alertMessage}
-              />
-
               <button className="btn btn-primary spacer" onClick={this.save}>
                 Update
               </button>

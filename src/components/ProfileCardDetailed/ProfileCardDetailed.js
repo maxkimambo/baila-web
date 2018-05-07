@@ -32,8 +32,8 @@ class ProfileCardDetailed extends React.Component {
   
     render() {
         return (
-            <div className="col-md-4">
-                <div className="card mb-4 box-shadow">
+            <div className="col-md-10">
+                <div className="card mb-10 box-shadow">
                 <div className="card-body">
                     <ProfilePhoto url={this.state.mainPhoto}/>
                     <ProfileCardDetails user={this.state.profile}/> 
