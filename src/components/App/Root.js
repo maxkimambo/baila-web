@@ -8,6 +8,7 @@ import About from "../About/About";
 import Matches from "../Matches";
 import Settings from "../Settings";
 import ProfileCardDetailed from "../ProfileCardDetailed/ProfileCardDetailed";
+import Profile from './../Profile'
 
 // Root for the app compoment
 const Root = () => {
@@ -19,6 +20,7 @@ const Root = () => {
       <Route path="/matches" component={Matches} />
       <Route path="/settings" component={Settings} />
       <Route path="/profile/:id" component={ProfileCardDetailed} />
+      <Route path="/profile" component={Profile} />
     </div>
   );
 };

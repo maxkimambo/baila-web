@@ -28,7 +28,7 @@ const Header = ({match}) => {
                     <Link className="nav-link" to="/messages"> Messages </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/own-profile"> Profile </Link>
+                    <Link className="nav-link" to="/profile"> Profile </Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/settings"> Settings </Link>
