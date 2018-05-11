@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileCardList from './../ProfileCardList/ProfileCardList'; 
 import { connect } from 'react-redux';
 import * as actions from '../../Actions'
-class ProfileComponent extends React.Component {
+class SuggestionsComponent extends React.Component {
   
     constructor(props, context){
         super()
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileComponent); 
+export default connect(mapStateToProps, mapDispatchToProps)(SuggestionsComponent); 
