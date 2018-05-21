@@ -1,4 +1,4 @@
-import * as actionTypes from './../Actions/actionTypes'
+import * as actionTypes from './../Actions/actionTypes';
 import initialState from './initialState';
 
 const ProfileReducer = (state = {}, action) => {

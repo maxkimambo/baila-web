@@ -1,14 +1,14 @@
 import React from "react";
-import "./App.css";
-import Heading from "../Header/Header";
-import Suggestions from "../Suggestions/Suggestions";
-
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import About from "../About/About";
+import Heading from "../Header/Header";
 import Matches from "../Matches";
-import Settings from "../Settings";
 import ProfileCardDetailed from "../ProfileCardDetailed/ProfileCardDetailed";
-import Profile from './../Profile'
+import Settings from "../Settings";
+import Suggestions from "../Suggestions/Suggestions";
+import Profile from './../Profile';
+import "./App.css";
+
 
 // Root for the app compoment
 const Root = () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Root from './components/App/Root';
-import registerServiceWorker from './registerServiceWorker';
-import configureStore from './Store/configureStore'
 import { Provider } from 'react-redux';
-import * as Actions from './Actions'; 
+import * as Actions from './Actions';
+import configureStore from './Store/configureStore';
+import Root from './components/App/Root';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore(); 
 store.dispatch(Actions.LoadMatches()); 

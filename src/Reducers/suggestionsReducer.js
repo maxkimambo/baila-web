@@ -1,5 +1,5 @@
 import * as actionType from './../Actions/actionTypes';
-import initialState from './initialState'; 
+import initialState from './initialState';
 
 const suggestionsReducer = (state, action) => {
     switch (action.type) {

@@ -1,6 +1,5 @@
-import React from 'react'; 
-import ProfileOwn from './ProfileOwn'
-import Proficiency from './../Settings/Proficiency'
+import React from 'react';
+import ProfileOwn from './ProfileOwn';
 class Profile extends React.Component{
 
     constructor(props){
